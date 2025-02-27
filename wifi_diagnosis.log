@@ -1,0 +1,148 @@
+The following tools need to be installed: ethtool net-tools
+Tool installation complete.
+
+Starting Wi-Fi Diagnostics...
+Performing ping test to 8.8.8.8...
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+64 bytes from 8.8.8.8: icmp_seq=1 ttl=60 time=9.87 ms
+64 bytes from 8.8.8.8: icmp_seq=2 ttl=60 time=9.87 ms
+64 bytes from 8.8.8.8: icmp_seq=3 ttl=60 time=10.2 ms
+64 bytes from 8.8.8.8: icmp_seq=4 ttl=60 time=10.0 ms
+
+--- 8.8.8.8 ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3004ms
+rtt min/avg/max/mdev = 9.866/9.980/10.190/0.131 ms
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+64 bytes from 8.8.8.8: icmp_seq=1 ttl=60 time=9.87 ms
+64 bytes from 8.8.8.8: icmp_seq=2 ttl=60 time=9.87 ms
+64 bytes from 8.8.8.8: icmp_seq=3 ttl=60 time=10.2 ms
+64 bytes from 8.8.8.8: icmp_seq=4 ttl=60 time=10.0 ms
+
+--- 8.8.8.8 ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3004ms
+rtt min/avg/max/mdev = 9.866/9.980/10.190/0.131 ms
+
+System Information:
+Operating System: Ubuntu 22.04.5 LTS
+Kernel Version: 6.8.0-52-generic
+CPU: AMD Ryzen 7 PRO 7840U w/ Radeon 780M Graphics
+Total RAM: 14Gi
+Last System Update: Feb 13 18:57
+Wi-Fi Card installed: 01:00.0 Network controller: Qualcomm Atheros QCNFA765 (rev 01)
+Wi-Fi Interface Information:
+Interface: wlp1s0
+Interface wlp1s0
+	ifindex 3
+	wdev 0x1
+	addr 8c:3b:4a:56:d9:a6
+	ssid Odoo
+	type managed
+	wiphy 0
+	channel 153 (5765 MHz), width: 40 MHz, center1: 5755 MHz
+	txpower 18.00 dBm
+	multicast TXQ:
+		qsz-byt	qsz-pkt	flows	drops	marks	overlmt	hashcol	tx-bytes	tx-packets
+		0	0	0	0	0	0	0	0		0
+Connected to ac:8b:a9:5c:78:ba (on wlp1s0)
+	SSID: Odoo
+	freq: 5765
+	RX: 498190559 bytes (2438703 packets)
+	TX: 1536289 bytes (10977 packets)
+	signal: -57 dBm
+	rx bitrate: 516.0 MBit/s 40MHz HE-MCS 10 HE-NSS 2 HE-GI 0 HE-DCM 0
+	tx bitrate: 458.8 MBit/s 40MHz HE-MCS 9 HE-NSS 2 HE-GI 0 HE-DCM 0
+
+	bss flags:	short-slot-time
+	dtim period:	3
+	beacon int:	100
+Signal Strength: -57 dBm
+Transmission Rate: 458.8
+Power save: off
+POWER_SAVE=Power save: off
+
+VPN (tun0/wg0) detected: Not active
+Network Speed Test:
+Running speed test, please wait... [33m(Note: The test may appear to hang at 98% for a few minutes. This is normal - wait patiently.)(B[m
+Retrieving speedtest.net configuration...
+Testing from Verizon Internet Services (152.193.57.18)...
+Retrieving speedtest.net server list...
+Selecting best server based on ping...
+Hosted by Planet Networks, Inc. (Sparta, NJ) [411.64 km]: 23.049 ms
+Testing download speed................................................................................
+Download: 775.25 Mbit/s
+Testing upload speed......................................................................................................
+Upload: 563.71 Mbit/s
+
+
+Checking network status with nmcli...
+DEVICE           TYPE      STATE      CONNECTION         
+enx00e04c505560  ethernet  connected  Wired connection 1 
+wlp1s0           wifi      connected  Odoo               
+lo               loopback  unmanaged  --                 
+IN-USE  BSSID              SSID            MODE   CHAN  RATE        SIGNAL  BARS  SECURITY    
+        78:45:58:BD:1C:C0  --              Infra  6     195 Mbit/s  82      ▂▄▆█  WPA2        
+        7E:45:58:BD:1C:BF  Odoo            Infra  36    540 Mbit/s  82      ▂▄▆█  WPA2 WPA3   
+*       AC:8B:A9:5C:78:BA  Odoo            Infra  153   540 Mbit/s  72      ▂▄▆_  WPA2 WPA3   
+        B2:8B:A9:5C:78:BA  --              Infra  153   540 Mbit/s  72      ▂▄▆_  WPA2        
+        AC:8B:A9:5C:75:A4  Odoo            Infra  157   540 Mbit/s  69      ▂▄▆_  WPA2 WPA3   
+        B2:8B:A9:5C:78:B9  --              Infra  11    130 Mbit/s  65      ▂▄▆_  WPA2        
+        AE:8B:A9:5C:78:BB  wifi6e-control  Infra  0     54 Mbit/s   64      ▂▄▆_  WPA3        
+        B2:8B:A9:5C:75:A3  Odoo            Infra  1     130 Mbit/s  62      ▂▄▆_  WPA2 WPA3   
+        AE:8B:A9:5C:78:BC  --              Infra  0     54 Mbit/s   62      ▂▄▆_  WPA3        
+        AE:8B:A9:5C:75:A5  wifi6e-control  Infra  0     54 Mbit/s   60      ▂▄▆_  WPA3        
+        AE:8B:A9:5C:75:A6  --              Infra  0     54 Mbit/s   60      ▂▄▆_  WPA3        
+        44:48:C1:A9:83:03  9PRV2DEP        Infra  6     260 Mbit/s  57      ▂▄▆_  WPA2 802.1X 
+        24:5A:4C:56:DC:25  --              Infra  161   540 Mbit/s  52      ▂▄__  WPA2        
+        AC:8B:A9:5C:33:BE  Odoo            Infra  36    540 Mbit/s  49      ▂▄__  WPA2 WPA3   
+        B2:8B:A9:5C:33:BE  --              Infra  36    540 Mbit/s  49      ▂▄__  WPA2        
+        AE:8B:A9:5C:74:1A  wifi6e-control  Infra  0     54 Mbit/s   47      ▂▄__  WPA3        
+        AE:8B:A9:5C:74:1B  --              Infra  0     54 Mbit/s   47      ▂▄__  WPA3        
+        AC:8B:A9:5C:67:FD  Odoo            Infra  36    540 Mbit/s  45      ▂▄__  WPA2 WPA3   
+        B2:8B:A9:5C:67:FD  --              Infra  36    540 Mbit/s  45      ▂▄__  WPA2        
+        AE:8B:A9:5C:33:B0  --              Infra  0     54 Mbit/s   44      ▂▄__  WPA3        
+        AE:8B:A9:5C:33:BF  wifi6e-control  Infra  0     54 Mbit/s   42      ▂▄__  WPA3        
+        D0:21:F9:71:04:93  Odoo            Infra  36    540 Mbit/s  37      ▂▄__  WPA2 WPA3   
+        68:D7:9A:3A:D8:D1  Odoo            Infra  153   540 Mbit/s  32      ▂▄__  WPA2 WPA3   
+        6E:D7:9A:3A:D8:D1  --              Infra  153   540 Mbit/s  30      ▂___  WPA2        
+        44:48:C1:A9:83:15  FA467XSI        Infra  149   540 Mbit/s  29      ▂___  WPA2 802.1X 
+        44:48:C1:A9:83:17  ClientScape     Infra  149   540 Mbit/s  29      ▂___  --          
+Current connection speed: 516.0 MBit/s
+Monitoring Wi-Fi signal and quality with nmcli...
+Connected to SSID: Odoo
+Signal level: 72%
+
+Wi-Fi Diagnostic Summary
+========================
+Wi-Fi Interface:
+- wlp1s0
+Speed Test Results:
+Speed test results not available. The test may have failed or not been performed.
+Network Environment
+====================
+- SSID: Odoo
+- Signal Strength: -57 dBm
+- Signal level: 72%
+- Frequency: 5765 MHz
+- Power save: off
+- VPN Active: No
+
+INSIGHTS
+========
+System Information:
+- Your system specifications are important for Wi-Fi performance. A recent kernel version often includes the latest Wi-Fi drivers and features.
+Wi-Fi Interface:
+- Connected to network: Odoo
+- You are on the 5 GHz band. This typically provides faster speeds but has shorter range.
+- Good signal strength. Should be sufficient for most applications.
+- Good transmission rate. Suitable for most high-bandwidth activities.
+Speed Test:
+- Speed test results not available. Unable to provide insights on network performance.
+Network Environment:
+- Signal quality is good. This should provide stable Wi-Fi performance.
+- Connection speed is good. This should support most online activities.
+- Power save mode is off. This may provide better Wi-Fi performance but could impact battery life on mobile devices.
+
+VPN Status:
+- No VPN (tun0 OpenVPN or wg0 WireGuard) detected. Your internet traffic is not being routed through a VPN at the moment.
+
+Wi-Fi Diagnostics completed. For a full diagnostic report, check the log file at [33m/home/odoo/wifi_diagnosis.log(B[m

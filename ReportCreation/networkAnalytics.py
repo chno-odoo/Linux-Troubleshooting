@@ -1,0 +1,144 @@
+import json
+import sys
+import pdfkit
+import os
+
+# Check if data is provided
+if len(sys.argv) < 1:
+    print("No data provided.")
+    sys.exit(1)
+
+json_data = json.loads(sys.argv[1])
+
+# Generate PDF with HTML
+def generate_pdf(output_filename, data):
+    # Create dynamic HTML content by replacing placeholders with actual data from the JSON object
+    html_content = f"""
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Network Analytics Dashboard</title>
+        <style>
+            body {{
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                background-color: #f0f2f5;
+                color: #333;
+                margin: 0;
+                padding: 20px;
+            }}
+            .container {{
+                max-width: 1200px;
+                margin: auto;
+                background: #fff;
+                padding: 30px;
+                border-radius: 12px;
+                box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            }}
+            h1 {{
+                color: #007BFF;
+                text-align: center;
+                font-size: 36px;
+                margin-bottom: 40px;
+            }}
+            .card {{
+                display: inline-block;
+                width: 48%;
+                margin-right: 2%;
+                margin-bottom: 20px;
+                padding: 20px;
+                background: #fff;
+                border-radius: 8px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }}
+            .card:last-child {{
+                margin-right: 0;
+            }}
+            .card h2 {{
+                color: #007BFF;
+                font-size: 24px;
+                margin-bottom: 15px;
+            }}
+            .card p {{
+                font-size: 16px;
+                margin: 10px 0;
+                color: #555;
+            }}
+            .card .highlight {{
+                font-weight: bold;
+                font-size: 18px;
+                color: #333;
+            }}
+            .row {{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                margin-bottom: 30px;
+            }}
+            .footer {{
+                text-align: center;
+                margin-top: 30px;
+                font-size: 14px;
+                color: #777;
+            }}
+            img {{
+                max-width: 100%;
+                border-radius: 8px;
+            }}
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Network Analytics</h1>
+            
+            <div class="row">
+                <div class="card">
+                    <h2>WiFi Information</h2>
+                    <p><strong>SSID:</strong> <span class="highlight">{data['SSID']}</span></p>
+                    <p><strong>Signal Strength:</strong> <span class="highlight">{data['SIGNAL_STRENGTH']} dBm</span></p>
+                    <p><strong>Signal Level:</strong> <span class="highlight">{data['SIGNAL_LEVEL']}</span></p>
+                    <p><strong>Frequency:</strong> <span class="highlight">{data['WIFI_FREQUENCY']} MHz</span></p>
+                    <p><strong>Connection Speed:</strong> <span class="highlight">{data['connection_speed']}</span></p>
+                </div>
+                
+                <div class="card">
+                    <h2>VPN Status</h2>
+                    <p><strong>Active:</strong> <span class="highlight">{data['VPN_ACTIVE']}</span></p>
+                    <p><strong>Type:</strong> <span class="highlight">{data['VPN_TYPE']}</span></p>
+                    <p><strong>Interface:</strong> <span class="highlight">{data['VPN_INTERFACE']}</span></p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="card">
+                    <h2>Network Performance</h2>
+                    <p><strong>Download Speed:</strong> <span class="highlight">{data['download']} Mbps</span></p>
+                    <p><strong>Upload Speed:</strong> <span class="highlight">{data['upload']} Mbps</span></p>
+                    <p><strong>Ping Results:</strong></p>
+                    <pre>{data['PING_RESULTS']}</pre>
+                </div>
+                
+                <div class="card">
+                    <h2>System Information</h2>
+                    <p><strong>Operating System:</strong> <span class="highlight">{data['operating_system']}</span></p>
+                    <p><strong>Network Interface:</strong> <span class="highlight">{data['interface']}</span></p>
+                    <p><strong>Power Save Mode:</strong> <span class="highlight">{data['POWER_SAVE']}</span></p>
+                </div>
+            </div>
+            
+           
+            <div class="footer">
+                <p>Generated by the Odoo IT team</p>
+            </div>
+        </div>
+    </body>
+    </html>
+    """
+
+    # Convert HTML to PDF using pdfkit
+    pdfkit.from_string(html_content, output_filename)
+    print(f"PDF saved as {output_filename}")
+
+if __name__ == "__main__":
+    generate_pdf("network_analytics_output.pdf", json_data)
