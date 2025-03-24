@@ -129,7 +129,7 @@ echo "" >> "$LOG_FILE"
 
 # Check for WiFi Driver Issues
 echo "WiFi Driver Information:" >> "$LOG_FILE"
-lspci -nnk | grep -iA3 wireless >> "$LOG_FILE"
+lshw -C network >> "$LOG_FILE"
 echo "" >> "$LOG_FILE"
 
 # Check for High Resource-Consuming Processes
