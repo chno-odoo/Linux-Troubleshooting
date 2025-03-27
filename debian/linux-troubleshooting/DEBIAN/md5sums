@@ -1,0 +1,11 @@
+6f14a1c4c6f309df034f069feac66b6d  usr/bin/batt-check
+828b78b091d40c4d906c33391724aa6f  usr/bin/disk-usage-check
+d6cbcb99d9b1124dfd0d4b5d433e8527  usr/bin/odoo-linux
+1cedb2c3983283ada9105efc782a1e6c  usr/bin/wifi-diagnostic
+6d409d869e0065ab7330a3fdea56acde  usr/lib/python3/dist-packages/linux_troubleshooting-0.1.0.egg-info/PKG-INFO
+68b329da9893e34099c7d8ad5cb9c940  usr/lib/python3/dist-packages/linux_troubleshooting-0.1.0.egg-info/dependency_links.txt
+e1bf8c9fb11e977f12bb2be462872071  usr/lib/python3/dist-packages/linux_troubleshooting-0.1.0.egg-info/entry_points.txt
+d41d8cd98f00b204e9800998ecf8427e  usr/lib/python3/dist-packages/linux_troubleshooting-0.1.0.egg-info/requires.txt
+68b329da9893e34099c7d8ad5cb9c940  usr/lib/python3/dist-packages/linux_troubleshooting-0.1.0.egg-info/top_level.txt
+237a918004da6c39982fbce1f5d4a46e  usr/share/doc/linux-troubleshooting/changelog.gz
+6e38c103ab80e6c3b6b20fe36060caa2  usr/share/doc/linux-troubleshooting/copyright

@@ -1,0 +1,19 @@
+#!/usr/bin/make -f
+
+export PYBUILD_NAME=linux-troubleshooting
+export PYBUILD_SYSTEM=distutils
+
+%:
+	dh $@ --with python3 --buildsystem=pybuild
+
+override_dh_auto_install:
+	dh_auto_install
+	mkdir -p debian/linux-troubleshooting/usr/bin
+	cp odooLinux/odooLinux/cli.py debian/linux-troubleshooting/usr/bin/odoo-linux
+	chmod +x debian/linux-troubleshooting/usr/bin/odoo-linux
+	cp Network/Wifi-Diagnostic.sh debian/linux-troubleshooting/usr/bin/wifi-diagnostic
+	chmod +x debian/linux-troubleshooting/usr/bin/wifi-diagnostic
+	cp Battery/batt-check.sh debian/linux-troubleshooting/usr/bin/batt-check
+	chmod +x debian/linux-troubleshooting/usr/bin/batt-check
+	cp Disk-Usage/disk-usage-check.sh debian/linux-troubleshooting/usr/bin/disk-usage-check
+	chmod +x debian/linux-troubleshooting/usr/bin/disk-usage-check 

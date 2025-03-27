@@ -1,0 +1,9 @@
+click>=8.0.0
+matplotlib
+pandas
+pdfkit
+psutil>=5.9.0
+requests>=2.31.0
+speedtest-cli>=2.1.3
+tqdm>=4.65.0
+weasyprint>=60.0

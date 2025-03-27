@@ -1,0 +1,10 @@
+linux-troubleshooting (0.1.0) unstable; urgency=medium
+
+  * Initial release.
+  * Added network diagnostics tools
+  * Added system monitoring tools
+  * Added battery diagnostics
+  * Added disk usage analysis
+  * Added report generation capabilities
+
+ -- Josm-odoo <josm@odoo.com>  Wed, 27 Mar 2024 12:00:00 +0000 
