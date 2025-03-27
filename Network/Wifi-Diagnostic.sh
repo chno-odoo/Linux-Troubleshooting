@@ -580,7 +580,7 @@ summarize_findings() {
     # Print the generated JSON (for debugging)
     # echo "$wifi_json"
 
-    log_and_display_plain "Runnign Script to create Report"
+    log_and_display_plain "Running Script to create Report"
     python3 ReportCreation/networkAnalytics.py "$wifi_json"
 
 
