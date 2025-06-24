@@ -1,10 +1,10 @@
 #!/bin/bash
 #
-# The purpose of this script is to change the hostname of the computer and fix chrome issues that come with changing the hostname.
+# This script will be used to change the hostname without the need to uninstall and reinstall chrome.
 # Created by: Chno
-# Creation date:Tue Jun 24 08:38:18 AM EDT 2025
-# Last updated:Tue Jun 24 08:38:18 AM EDT 2025
-# Last update: Added chrome cleanup.
+# Creation date: Tue Jun 24 09:37:54 AM EDT 2025
+# Last updated: Tue Jun 24 09:37:54 AM EDT 2025
+# Last update: Added a portion to remove the singleton lock file which prevents chrome from starting after a hostname change.
 
 # Function to clear Chrome cache for a specific user
 clear_chrome_cache() {
@@ -16,10 +16,12 @@ clear_chrome_cache() {
     # Kill Chrome processes for this user
     sudo -u "$username" pkill -f chrome 2>/dev/null || true
     
-    # Clear Chrome caches
+    # Clear Chrome caches and lock files
     sudo -u "$username" rm -rf "$user_home/.cache/google-chrome/" 2>/dev/null || true
     sudo -u "$username" rm -rf "$user_home/.config/google-chrome/Default/Local Storage/" 2>/dev/null || true
     sudo -u "$username" rm -rf "$user_home/.config/google-chrome/Default/Session Storage/" 2>/dev/null || true
+    sudo -u "$username" rm -f "$user_home/.config/google-chrome/SingletonLock" 2>/dev/null || true
+    sudo -u "$username" rm -f "$user_home/.config/google-chrome/Default/SingletonLock" 2>/dev/null || true
     
     echo "Chrome cache cleared for $username"
 }
